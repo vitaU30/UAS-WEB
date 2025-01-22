@@ -1,0 +1,12 @@
+{
+  "pasien": [
+    {
+      "id": "3e3c",
+      "bpjs": "000027287376",
+      "nik": "31231681979",
+      "nama": "Arvina Putri",
+      "tanggal_lahir": "2005-07-21",
+      "alamat": "banyuwangi kota"
+    }
+  ]
+}

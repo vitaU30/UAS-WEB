@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIM Klinik - Data Pasien</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>SIM Klinik</h1>
+      <p>Pendataan Pasien Klinik</p>
+    </header>
+
+    <div class="input">
+      <input type="text" id="bpjs" placeholder="Nomor BPJS" />
+      <input type="text" id="nik" placeholder="NIK KTP" />
+      <input type="text" id="nama" placeholder="Nama Lengkap" />
+      <input type="date" id="tanggalLahir" placeholder="Tanggal Lahir" />
+      <input type="text" id="alamat" placeholder="Alamat" />
+      <button id="btnSimpan" onclick="simpanData()">Simpan</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nomor BPJS</th>
+          <th>NIK</th>
+          <th>Nama</th>
+          <th>Tanggal Lahir</th>
+          <th>Alamat</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="hasil"></tbody>
+    </table>
+
+    <!-- Logout Section -->
+    <div class="logout-container">
+      <a href="login.html" id="logoutButton" title="Logout" onclick="logout()">
+        <img src="https://png.pngtree.com/png-vector/20190411/ourmid/pngtree-vector-left-arrow-icon-png-image_925725.jpg" alt="Logout" id="logoutIcon" />
+        <span>Logout</span>
+      </a>
+    </div>
+
+    <script>
+      // Cek apakah user sudah login
+      if (!localStorage.getItem("loggedIn")) {
+        window.location.href = "login.html";
+      }
+
+      // Fungsi logout
+      function logout() {
+        localStorage.removeItem("loggedIn");
+        window.location.href = "login.html";
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+    <script src="alert/sweetalert2.all.min.js"></script>
+    
+  </body>
+</html>
